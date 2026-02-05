@@ -1,0 +1,49 @@
+#!/usr/bin/expect -f
+
+set timeout 30
+
+spawn rclone config
+
+expect "n/s/q>"
+send "n\r"
+
+expect "name>"
+send "ftp_ocr\r"
+
+expect "Storage>"
+send "ftp\r"
+
+expect "host>"
+send "172.30.1.226\r"
+
+expect "user>"
+send "admin\r"
+
+expect "y) Yes type in my own password"
+send "y\r"
+
+expect "password>"
+send "admin\r"
+
+expect "port>"
+send "21\r"
+
+expect "y) Yes this is OK"
+send "y\r"
+
+expect "y) Yes this is OK (default)"
+send "y\r"
+
+expect "n) No, leave this set to \"false\""
+send "n\r"
+
+expect "y) Yes this is OK (default)"
+send "y\r"
+
+expect "e) Edit this remote"
+send "e\r"
+
+expect "n) New remote"
+send "q\r"
+
+expect eof

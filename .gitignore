@@ -1,0 +1,62 @@
+# 빌드/캐시
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+*.nbc
+*.nbi
+
+# 파이썬/패키징 산출물
+*.egg-info/
+dist/
+build/
+
+# 정리 과정에서 만든 미사용 폴더(커밋 제외)
+/_unused/
+/FAST/_unused/
+
+# 서드파티 소스 트리(용량 큼, 보통 pip/conda로 설치)
+/third_party/
+
+# 로컬 소스 설치(embedded git repo 경고 방지) → pip로 설치 권장
+/FAST/bigjson/
+
+# 대용량(체크포인트/가중치/모델) - 커밋 제외
+*.pth
+*.ckpt
+*.pt
+*.bin
+*.safetensors
+
+# 대용량 데이터베이스/데이터 파일 - 커밋 제외
+*.mdb
+*.lmdb/
+
+# 학습 산출물/로그/워크디렉터리 - 커밋 제외
+outputs/
+work_dirs/
+
+# 컴파일 산출물(FAST post_processing 빌드 등)
+*.so
+*.o
+*.a
+*.dll
+*.dylib
+
+# 데이터/중간 산출물(용량 커질 수 있어 커밋 제외)
+/FAST/data/
+/FAST/json_merged/
+/FAST/kotrocr_output/
+*.ipynb
+*:Zone.Identifier
+
+# lookup 산출물(재생성 가능) - 커밋 제외
+/FAST/FAST/lookup_*.pkl
+/FAST/FAST/lookup_*.pkl.gz
+/FAST/FAST/optimized_lookup_*.py
+/FAST/FAST/unified_ocr_lookup_optimizer.py
+
